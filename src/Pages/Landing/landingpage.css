@@ -1,0 +1,106 @@
+#background_landing {
+  width: 100vw;
+  height: 100vh;
+  overflow-y: hidden;
+  overflow-x: hidden;
+  background-color: white;
+  display: row;
+  background-image: url("./langding_bg_img.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+}
+
+#landing_header {
+  background-color: red;
+  display: flex;
+  height: 61px;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+li {
+  list-style: none;
+  align-items: center;
+  text-align: center;
+}
+#landing_header > li {
+  background-color: blue;
+}
+#Logo_header {
+  width: 55px;
+  height: 55px;
+  align-self: flex-start;
+  margin-left: 20px;
+}
+.flex-row {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+}
+.test {
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white; /* Optional: Set text color to make it visible against the blue background */
+  margin-left: 100px;
+}
+
+.test > li {
+  display: flex;
+  height: 100%;
+  justify-content: center;
+  margin-right: 50px;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+}
+li:hover {
+  background-color: #cf000090;
+  border-radius: 10px;
+}
+#user_icon {
+  width: 50px;
+  height: 50px;
+  border-radius: 50px;
+  align-self: flex-end;
+  margin-right: 20px;
+}
+
+#display-flex-column {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+}
+#position--aboslute {
+  position: absolute;
+  width: 900px;
+  height: 800px;
+  background-color: blue;
+}
+#bg_blur {
+  width: 100%;
+  height: 100%;
+  background-color: #cf000090;
+}
+#background_blug-black {
+  background-color: #00000090;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  z-index: 0;
+}
+#button-toggle-sidebar {
+  position: absolute;
+  align-self: flex-start;
+  margin-top: 10px;
+  margin-left: 10px;
+  width: 50px;
+  height: 50px;
+  border-radius: 10px;
+  background-color: red;
+  font-size: xx-large;
+  text-align: center;
+}
