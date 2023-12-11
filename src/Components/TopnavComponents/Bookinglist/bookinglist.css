@@ -1,0 +1,41 @@
+#booking-column {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  height: 100%; /* This will make the div take up the full height of the viewport */
+  min-height: 590px;
+  max-height: 600px;
+  color: black;
+  margin-bottom: 10px;
+  padding: 10px 10px 10px 10px;
+  overflow-y: scroll;
+}
+
+#center_box {
+  display: flex;
+  flex-direction: row;
+  height: 100%;
+  background-color: blue;
+  color: black;
+}
+#center_box {
+  display: flex;
+  flex-direction: row;
+  background-color: red;
+}
+/* The scrollbar track (the background) */
+::-webkit-scrollbar {
+  width: 10px;
+  background-color: rgb(219, 219, 219);
+}
+
+/* The scrollbar handle (the moving part) */
+::-webkit-scrollbar-thumb {
+  background: #888;
+  border-radius: 2px;
+}
+
+/* The scrollbar handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}

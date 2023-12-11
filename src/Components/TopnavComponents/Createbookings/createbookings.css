@@ -42,8 +42,8 @@
 #booking-display {
   display: flex;
   flex-direction: row;
-  padding-left: 1.5rem;
   padding: 1.5rem, 1.5rem, 1.5rem, 1.5rem;
+  color: black;
 }
 input {
   width: 100%;
@@ -81,6 +81,8 @@ select {
   align-self: flex-end;
   width: 20%;
   margin: auto;
+  margin-top: 20px;
+  margin-bottom: 10px;
 }
 label {
   color: black;
