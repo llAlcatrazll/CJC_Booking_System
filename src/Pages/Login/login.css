@@ -1,26 +1,29 @@
-* {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-}
 .login_bg {
-  width: 1600px;
-  height: 811px;
-
-  overflow: hidden;
-  overflow-y: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100vw;
+  min-height: 100vh;
   background-image: url("/login_bg.png");
   background-size: cover;
-  padding: 30%, 30%, 30%, 30%;
+  background-repeat: no-repeat;
+  position: relative;
 }
 #bg_blug {
-  width: 100%;
+  width: inherit;
   height: 100%;
   background-color: #00000099;
-  display: flex;
-  z-index: 0;
   position: absolute;
+  top: 0;
+  left: 0;
 }
+
+#cjc_logo {
+  width: 150px;
+  height: 150px;
+  margin-bottom: 32px;
+}
+
 #login_bg_bg {
   width: 100%;
   height: 100%;
@@ -28,58 +31,63 @@
   position: relative;
 }
 #login_box_main {
-  background-color: #fff;
-  width: 400px;
-  height: 70%;
-  position: relative;
-  margin-left: 600px;
-  margin-right: 300px;
-  margin-top: 5%;
-  border-radius: 8px;
   display: flex;
   flex-direction: column;
-  padding-top: 20px;
-  padding-left: 20px;
-  padding-right: 20px;
-}
-#cjc_logo {
-  width: 150px;
-  height: 150px;
-}
-#error_box {
-  color: #691911;
-  background-color: #ff000029;
-  border-radius: 9px;
-  height: 130%;
   align-items: center;
-  justify-content: center;
-  border-color: #f0c5c1;
-  border-style: solid;
-  border-width: 1px;
-}
-#error_spacer {
-  margin-bottom: 20px;
+  background-color: #fff;
+  width: 400px;
+  min-height: 65vh;
+  border-radius: 8px;
+  z-index: 1;
+  padding: 32px;
 }
 
-input {
+#error_spacer {
+  margin-bottom: 20px;
+  width: 100%;
+  text-align: center;
+  background-color: #ff000029;
+  border-radius: 9px;
+}
+
+#error_box {
+  color: #691911;
+  font-weight: 600;
+}
+
+#login_box_main > input {
+  width: 100%;
   background-color: #ffffff;
-  padding: 10px 20px;
-  height: calc(1.5em + 1rem + 9px);
+  min-height: calc(1.5em + 1rem + 9px);
+
   color: black;
   border-radius: 0.6rem;
   border-style: solid;
-  border-width: 2px;
-
   margin-top: 10px;
   margin-bottom: 10px;
   box-shadow: 0 0 0 0;
+  padding-inline: 0px;
 }
-#bottom_input {
+
+#login_box_main > input:focus {
+  border-style: solid;
+  border-width: 2px;
+  border-color: red !important;
+  outline: none;
+  padding-inline: 2px;
+}
+
+#login_box_main > input::placeholder {
+  padding-inline: 10px;
+}
+
+/* #bottom_input {
   margin-bottom: 30px;
-}
+} */
 #login_button {
-  background-color: black;
+  background-color: rgb(168, 168, 168);
   width: 100%;
+  margin-top: 40px;
 }
 #forgot_password-prompt {
   margin-top: 10px;
@@ -90,3 +98,28 @@ input {
   font-size: 110%;
   animation-duration: 0.5s;
 }
+
+@media screen and (max-width: 460px) {
+  #login_box_main {
+    border-radius: 0;
+    width: 100%;
+    height: 100vh;
+    padding: 10px;
+  }
+  #cjc_logo {
+    width: 250px;
+    height: 250px;
+    margin-bottom: 72px;
+    margin-top: 32px;
+  }
+}
+
+@media screen and (max-height: 728px) {
+  #login_box_main {
+    min-height: 100vh;
+    padding: 10px;
+    border-radius: 0;
+  }
+}
+
+
