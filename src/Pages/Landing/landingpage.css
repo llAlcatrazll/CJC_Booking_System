@@ -10,7 +10,35 @@
   background-size: cover;
   position: relative;
 }
-
+#username_decor {
+  margin-right: 20px;
+  font-size: larger;
+  font-weight: 500;
+}
+#react-logout {
+  color: red;
+  width: 200px;
+  height: auto;
+}
+#Logout_box {
+  position: absolute;
+  width: 200px;
+  height: 40px;
+  border-bottom-left-radius: 8px;
+  background-color: white;
+  margin-top: 57px;
+  z-index: 999;
+  margin-left: 88%;
+  display: flex;
+  flex-direction: row;
+  text-align: center;
+  padding-top: 6px;
+  padding-left: 20px;
+}
+#logout-button {
+  width: 30px;
+  height: 30px;
+}
 #landing_header {
   background-color: red;
   display: flex;

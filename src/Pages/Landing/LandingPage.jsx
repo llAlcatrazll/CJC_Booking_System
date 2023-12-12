@@ -1,9 +1,11 @@
 import "./landingpage.css";
 import User_Icon from "../../assets/COE.jpg";
 import Logo_CJC from "../../assets/Logo.png";
+import Logout from "../../assets/logout.png";
 import { useState } from "react";
 import Sidebarbox from "../../Sidebar/Sidebarbox";
-
+// import React, { Component } from "react";
+import { Link } from "react-router-dom";
 import Bookinglistpage from "../../Components/TopnavComponents/Bookinglist/Bookinglistpage";
 import Search_Page from "../../Components/TopnavComponents/Search/Search_Page";
 import ActivityCalendar_Page from "../../Components/TopnavComponents/ActivityCalendar/ActivityCalendarPage";
@@ -23,6 +25,7 @@ export default function LandingPage() {
   const [searchpage, setsearchpage] = useState(false);
   const [bookinglist, setbookinglist] = useState(false);
   const [toggleSidebar, settoggleSidebar] = useState("true");
+  const [logoutPop, setlogoutPop] = useState(false);
 
   const setPage = (selectedValue) => {
     setcreatebooking(selectedValue === "create");
@@ -31,6 +34,10 @@ export default function LandingPage() {
     setbookinglist(selectedValue === "list");
   };
 
+  const loutoutpopper = () => {
+    setlogoutPop((current) => !current);
+    // most efficient for reversing value
+  };
   const collapser = () => {
     settoggleSidebar((current) => !current);
     // most efficient for reversing value
@@ -50,9 +57,30 @@ export default function LandingPage() {
             </div>
           </div>
           <div id="display-flex-column">
-            {Username}
-            <img id="user_icon" src={User_Icon} alt="" />
+            <div id="username_decor">{Username}</div>
+            <img
+              id="user_icon"
+              src={User_Icon}
+              alt=""
+              onClick={loutoutpopper}
+            />
           </div>
+          {logoutPop ? (
+            <>
+              <div id="Logout_box">
+                <Link to={"/"}>
+                  <p>Log out</p>
+                </Link>
+                <Link to={"/"}>
+                  <img id="logout-button" src={Logout} />
+                </Link>
+              </div>
+            </>
+          ) : (
+            <>
+              <div></div>
+            </>
+          )}
         </div>
       </header>
       <div id="background_blug-black"></div>
