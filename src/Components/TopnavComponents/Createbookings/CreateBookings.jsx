@@ -33,6 +33,7 @@ export default function CreateBookings() {
         <hr />
         <div id="booking-display ">
           <input
+            required
             type="text"
             placeholder="Name of Event"
             value={NameofEvent}
@@ -45,6 +46,7 @@ export default function CreateBookings() {
             onChange={(e) => setAdressofEvent(e.target.value)}
           />
           <input
+            required
             type="text"
             placeholder="Purpose of Event"
             value={PurposeofEvent}
@@ -54,11 +56,13 @@ export default function CreateBookings() {
         <label htmlFor="starting-time">Start of Event</label>
         <div name="starting-time" className="display-flex--column">
           <input
+            required
             type="date"
             value={StartDateofEvent}
             onChange={(e) => setStartDateofEvent(e.target.value)}
           />
           <input
+            required
             type="time"
             name="start-time"
             value={StartingTimeofEvent}
@@ -68,11 +72,13 @@ export default function CreateBookings() {
         <label htmlFor="ending-event">End of Event</label>
         <div name="ending-time" className="display-flex--column">
           <input
+            required
             type="date"
             value={EndingDateofEvent}
             onChange={(e) => setEndingDateofEvent(e.target.value)}
           />
           <input
+            required
             type="time"
             value={EndingTimeofEvent}
             onChange={(e) => setEndingTimeofEvent(e.target.value)}
@@ -88,7 +94,9 @@ export default function CreateBookings() {
             value={FacilityofEvent}
             onChange={(e) => setFacilityofEvent(e.target.value)}
           >
-            <option value="">Select Facility</option>
+            <option required value="">
+              Select Facility
+            </option>
           </select>
         </div>
         <button id="submit-button" onChange={handlesubmit}>

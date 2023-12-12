@@ -10,7 +10,7 @@ export default function Eventcart_comp() {
   const EndingTIme = "3:00";
   const PurposeofEvent = "Funsies";
 
-  const [openEventCard, setopenEventCard] = useState(false);
+  const [openEventCard, setopenEventCard] = useState(true);
   const cardOpener = () => {
     setopenEventCard((current) => !current);
     // most efficient for reversing value

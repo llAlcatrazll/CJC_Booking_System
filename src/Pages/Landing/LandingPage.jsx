@@ -6,7 +6,7 @@ import Sidebarbox from "../../Sidebar/Sidebarbox";
 
 import Bookinglistpage from "../../Components/TopnavComponents/Bookinglist/Bookinglistpage";
 import Search_Page from "../../Components/TopnavComponents/Search/Search_Page";
-import ActivityCalendar_Page from "../../Components/TopnavComponents/ActivityCalendar/ActivityCalendar_Page";
+import ActivityCalendar_Page from "../../Components/TopnavComponents/ActivityCalendar/ActivityCalendarPage";
 import CreateBookings from "../../Components/TopnavComponents/Createbookings/CreateBookings";
 
 const Username = "COE";

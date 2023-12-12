@@ -1,0 +1,67 @@
+/* :root {
+  --bgcolor: #c3f6bb;
+  --butoncolor: #68a55f;
+  --boxshadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  --topnavbg: #87c37e;
+  --inputbg: #9ad292;
+  --cirlce: #62a492;
+  --defaultbg: #b5f1ac;
+  --fontcolor: #16281487;
+  --fontstyling: font-family: Inknut Antiqua;
+  --bordernavcolor: #16281467;
+} */
+#fullsizecalendar {
+  background-color: white;
+  width: 100%;
+  min-width: 1000px;
+}
+/* .calendar-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+} */
+
+.rbc-calendar {
+  height: 700px !important;
+}
+#calendar-test {
+  width: 800px;
+  height: 800px;
+  background-color: red;
+  position: absolute;
+}
+.rbc-day-bg.rbc-off-range-bg {
+  background-color: rgb(190, 190, 190);
+  color: white;
+}
+.rbc-event-content {
+  background-color: rgb(255, 176, 176);
+  border-color: green;
+  color: black;
+}
+.rbc-button-link {
+  color: var(--fontcolor);
+  padding: 5px 5px;
+}
+/* .rbc-month-view {
+} */
+.rbc-event {
+  background-color: black;
+}
+.rbc-day-bg {
+  border-radius: 3px;
+}
+.rbc-active {
+  background-color: var(--bordernavcolor) !important;
+}
+.rbc-timeslot-group {
+  /* background-color: var(--bgcolor); */
+  font-style: var(--fontstyling);
+  font-weight: 500;
+}
+rbc-day-bg.rbc-today {
+  background-color: var(--topnavbg) !important;
+}
+button {
+  color: white;
+}
