@@ -1,7 +1,7 @@
 #center_box {
   background-color: rgb(255, 255, 255);
   width: 100%;
-
+  position: relative;
   min-width: 830px;
   min-height: 600px;
   border-radius: 8px;
@@ -60,7 +60,7 @@ input:focus {
 
 input[type="date"],
 input[type="time"] {
-  max-width: 48%;
+  max-width: 100%;
   stroke: black;
 }
 select {
@@ -88,4 +88,41 @@ label {
   color: black;
   margin: 0;
   padding: 0;
+}
+#bg_blurr {
+  width: 100%;
+  height: 100%;
+  color: rebeccapurple;
+  z-index: 99999;
+}
+/* details confirmation box */
+#details_confirmation_box {
+  width: 50%;
+  margin: 170px 170px;
+  height: auto;
+  background-color: rgb(218, 218, 218);
+  position: absolute;
+  border-radius: 8px;
+  font-size: larger;
+  padding-top: 30px;
+  padding-bottom: 20px;
+}
+.flex-display--column > p:last-child {
+  margin-bottom: 20px;
+}
+.flex-display--column > p {
+  padding-bottom: 10px;
+}
+#top-booking-clear {
+  display: flex;
+  flex-direction: row;
+}
+#top-booking-clear > h1 {
+  font-size: 40px;
+  margin-bottom: 30px;
+}
+#top-booking-clear > button {
+  height: 40px;
+  margin-left: 45%;
+  margin-top: 1%;
 }

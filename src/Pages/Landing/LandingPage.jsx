@@ -18,6 +18,7 @@ searchpage
 activitycalendar
 createbooking
 */
+const AccountType = "Admin";
 
 export default function LandingPage() {
   const [createbooking, setcreatebooking] = useState(true);
@@ -26,6 +27,8 @@ export default function LandingPage() {
   const [bookinglist, setbookinglist] = useState(false);
   const [toggleSidebar, settoggleSidebar] = useState("true");
   const [logoutPop, setlogoutPop] = useState(false);
+
+  const [invalidCredentials, setinvalidCredentials] = useState();
 
   const setPage = (selectedValue) => {
     setcreatebooking(selectedValue === "create");
@@ -42,18 +45,44 @@ export default function LandingPage() {
     settoggleSidebar((current) => !current);
     // most efficient for reversing value
   };
+  const errorShower = () => {
+    setinvalidCredentials((current) => !current);
+  };
 
   return (
     <div id="background_landing">
+      {invalidCredentials ? (
+        <>
+          <div id="error_message_credentials" onClick={errorShower}>
+            <div id="center_error_box">
+              You dont have Access
+              <button>Continue</button>
+            </div>
+          </div>
+        </>
+      ) : (
+        <></>
+      )}
       <header id="landing_header">
         <div className="flex-row">
           <img id="Logo_header" src={Logo_CJC} alt="" />
           <div className="flex-row">
             <div onChange={setPage} className="test">
-              <li onClick={() => setPage("calendar")}>Activity Calendar</li>
-              <li onClick={() => setPage("create")}>Create Bookings</li>
-              <li onClick={() => setPage("list")}>Booking List</li>
-              <li onClick={() => setPage("search")}>Search</li>
+              {AccountType == "Admin" ? (
+                <>
+                  <li onClick={() => setPage("calendar")}>Activity Calendar</li>
+                  <li onClick={() => setPage("create")}>Create Bookings</li>
+                  <li onClick={() => setPage("list")}>Booking List</li>
+                  <li onClick={() => setPage("search")}>Search</li>
+                </>
+              ) : (
+                <>
+                  <li onClick={() => setPage("calendar")}>Activity Calendar</li>
+                  <li onClick={errorShower}>Create Bookings</li>
+                  <li>Booking List</li>
+                  <li>Search</li>
+                </>
+              )}
             </div>
           </div>
           <div id="display-flex-column">

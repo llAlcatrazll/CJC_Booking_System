@@ -10,10 +10,41 @@
   background-size: cover;
   position: relative;
 }
+#error_message_credentials {
+  position: absolute;
+  z-index: 999999;
+  width: 100%;
+  height: 100%;
+  background-color: #00000070;
+  color: white;
+}
 #username_decor {
   margin-right: 20px;
   font-size: larger;
   font-weight: 500;
+}
+#center_error_box {
+  width: 20%;
+  height: 200px;
+  border-radius: 8px;
+  margin-top: 20%;
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+  background-color: white;
+  color: black;
+  align-items: center;
+  text-align: center;
+  padding-top: 60px;
+  font-size: xx-large;
+}
+#center_error_box > button {
+  width: 200px;
+  height: 50px;
+  font-size: small;
+}
+.test > li {
+  color: white;
 }
 #react-logout {
   color: red;
