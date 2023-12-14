@@ -89,11 +89,17 @@ label {
   margin: 0;
   padding: 0;
 }
+#recude_opacity {
+  opacity: 7 0%;
+}
 #bg_blurr {
-  width: 100%;
-  height: 100%;
-  color: rebeccapurple;
-  z-index: 99999;
+  width: 220%;
+  height: 730px;
+  position: relative;
+  margin-top: -600px;
+  margin-left: -440px;
+  background-color: #22222290;
+  z-index: 0;
 }
 /* details confirmation box */
 #details_confirmation_box {

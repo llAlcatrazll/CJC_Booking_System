@@ -7,6 +7,7 @@
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
   border: solid 1.5px rgb(133, 133, 133);
   margin-bottom: 10px;
+  z-index: 999;
 }
 .display-flex--row {
   display: flex;
@@ -21,4 +22,32 @@
   flex-direction: column;
   text-align: center;
   font-family: Inknut Antiqua;
+}
+#span_bg {
+  width: 100px;
+  position: relative;
+  height: 100px;
+  background-color: red;
+  z-index: 0;
+}
+#button_spacer_pending {
+  margin: 10px 0;
+  display: flex;
+  flex-direction: row;
+  background-color: #fff06a;
+  color: black;
+}
+#button_spacer_approve {
+  margin: 10px 0;
+  display: flex;
+  flex-direction: row;
+  background-color: #81fa9b;
+  color: black;
+}
+#button_spacer_denied {
+  margin: 10px 0;
+  display: flex;
+  flex-direction: row;
+  background-color: #f57777;
+  color: black;
 }

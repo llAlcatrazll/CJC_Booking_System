@@ -2,7 +2,7 @@ import "./search.css";
 import { useState } from "react";
 import Eventcart_comp from "../../Eventcard/Eventcart_comp";
 export default function Search_Page() {
-  const [venusearch, setvenusearch] = useState();
+  const [venusearch, setvenusearch] = useState(true);
   const [datesearch, setdatesearch] = useState();
   const [clubsearch, setclubsearch] = useState();
   const [namesearch, setnamesearch] = useState();

@@ -19,6 +19,11 @@ activitycalendar
 createbooking
 */
 const AccountType = "Admin";
+/*
+Admin
+Student
+Student Assistant
+*/
 
 export default function LandingPage() {
   const [createbooking, setcreatebooking] = useState(true);
@@ -75,13 +80,24 @@ export default function LandingPage() {
                   <li onClick={() => setPage("list")}>Booking List</li>
                   <li onClick={() => setPage("search")}>Search</li>
                 </>
-              ) : (
+              ) : AccountType == "Student" ? (
                 <>
                   <li onClick={() => setPage("calendar")}>Activity Calendar</li>
-                  <li onClick={errorShower}>Create Bookings</li>
-                  <li>Booking List</li>
-                  <li>Search</li>
+                  <li id="recude_opacity" onClick={errorShower}>
+                    Create Bookings
+                  </li>
+                  <li onClick={() => setPage("list")}>Booking List</li>
+                  <li onClick={() => setPage("search")}>Search</li>
                 </>
+              ) : AccountType == "Student Assistant" ? (
+                <>
+                  <li onClick={() => setPage("calendar")}>Activity Calendar</li>
+                  <li onClick={() => setPage("create")}>Create Bookings</li>
+                  <li onClick={() => setPage("list")}>Booking List</li>
+                  <li onClick={() => setPage("search")}>Search</li>
+                </>
+              ) : (
+                <></>
               )}
             </div>
           </div>

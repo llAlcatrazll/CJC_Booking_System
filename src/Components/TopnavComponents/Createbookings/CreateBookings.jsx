@@ -12,9 +12,13 @@ export default function CreateBookings() {
   const [DetailsConfirmation, setDetailsConfirmation] = useState(false);
   const [Facility, setFacility] = useState(false);
   const [Room, setRoom] = useState(false);
-
+  /*
+No difference between Student Assisant and Admin Reservation */
   const handlesubmit = async (e) => {
     e.preventDefault();
+    {
+      details_popup;
+    }
     const blog = {
       NameofEvent,
       AdressofEvent,
@@ -33,6 +37,7 @@ export default function CreateBookings() {
     setFacility(selectedValue === "facility");
     setRoom(selectedValue === "room");
   };
+
   const clearInputs = async (e) => {
     e.preventDefault();
     setNameofEvent("");
@@ -150,7 +155,7 @@ export default function CreateBookings() {
         </button>
         {DetailsConfirmation ? (
           <>
-            <div id="bg_blurr">asdasdasds</div>
+            <div id="bg_blurr">.</div>
             <div id="details_confirmation_box">
               <div className="flex-display--column">
                 <h2>Confirm your Details</h2>
@@ -164,7 +169,15 @@ export default function CreateBookings() {
                 </p>
               </div>
 
-              <button onClick={handlesubmit}>Submit</button>
+              <button
+                onClick={(e) => {
+                  details_popup(e);
+                  handlesubmit(e);
+                }}
+              >
+                Submit
+              </button>
+              <button>Cancel</button>
             </div>
           </>
         ) : (
