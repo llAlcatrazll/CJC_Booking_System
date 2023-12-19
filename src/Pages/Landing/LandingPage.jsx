@@ -10,7 +10,7 @@ import Bookinglistpage from "../../Components/TopnavComponents/Bookinglist/Booki
 import Search_Page from "../../Components/TopnavComponents/Search/Search_Page";
 import ActivityCalendar_Page from "../../Components/TopnavComponents/ActivityCalendar/ActivityCalendarPage";
 import CreateBookings from "../../Components/TopnavComponents/Createbookings/CreateBookings";
-
+import { useMediaQuery } from "react-responsive";
 const Username = "COE";
 /*
 bookinglist
@@ -32,16 +32,19 @@ export default function LandingPage() {
   const [bookinglist, setbookinglist] = useState(false);
   const [toggleSidebar, settoggleSidebar] = useState("true");
   const [logoutPop, setlogoutPop] = useState(false);
-
+  const [navPanel, setnavPanel] = useState(false);
   const [invalidCredentials, setinvalidCredentials] = useState();
-
+  const isPC = useMediaQuery({ query: "(min-width: 920px)" });
   const setPage = (selectedValue) => {
     setcreatebooking(selectedValue === "create");
     setactivitycalendar(selectedValue === "calendar");
     setsearchpage(selectedValue === "search");
     setbookinglist(selectedValue === "list");
   };
-
+  const OpenNav = () => {
+    setnavPanel((current) => !current);
+    // most efficient for reversing value
+  };
   const loutoutpopper = () => {
     setlogoutPop((current) => !current);
     // most efficient for reversing value
@@ -72,34 +75,71 @@ export default function LandingPage() {
         <div className="flex-row">
           <img id="Logo_header" src={Logo_CJC} alt="" />
           <div className="flex-row">
-            <div onChange={setPage} className="test">
-              {AccountType == "Admin" ? (
-                <>
-                  <li onClick={() => setPage("calendar")}>Activity Calendar</li>
-                  <li onClick={() => setPage("create")}>Create Bookings</li>
-                  <li onClick={() => setPage("list")}>Booking List</li>
-                  <li onClick={() => setPage("search")}>Search</li>
-                </>
-              ) : AccountType == "Student" ? (
-                <>
-                  <li onClick={() => setPage("calendar")}>Activity Calendar</li>
-                  <li id="recude_opacity" onClick={errorShower}>
-                    Create Bookings
-                  </li>
-                  <li onClick={() => setPage("list")}>Booking List</li>
-                  <li onClick={() => setPage("search")}>Search</li>
-                </>
-              ) : AccountType == "Student Assistant" ? (
-                <>
-                  <li onClick={() => setPage("calendar")}>Activity Calendar</li>
-                  <li onClick={() => setPage("create")}>Create Bookings</li>
-                  <li onClick={() => setPage("list")}>Booking List</li>
-                  <li onClick={() => setPage("search")}>Search</li>
-                </>
-              ) : (
-                <></>
-              )}
-            </div>
+            {isPC ? (
+              <div onChange={setPage} className="test">
+                {AccountType == "Admin" ? (
+                  <>
+                    <li onClick={() => setPage("calendar")}>
+                      Activity Calendar
+                    </li>
+                    <li onClick={() => setPage("create")}>Create Bookings</li>
+                    <li onClick={() => setPage("list")}>Booking List</li>
+                    <li onClick={() => setPage("search")}>Search</li>
+                  </>
+                ) : AccountType == "Student" ? (
+                  <>
+                    <li onClick={() => setPage("calendar")}>
+                      Activity Calendar
+                    </li>
+                    <li id="recude_opacity" onClick={errorShower}>
+                      Create Bookings
+                    </li>
+                    <li onClick={() => setPage("list")}>Booking List</li>
+                    <li onClick={() => setPage("search")}>Search</li>
+                  </>
+                ) : AccountType == "Student Assistant" ? (
+                  <>
+                    <li onClick={() => setPage("calendar")}>
+                      Activity Calendar
+                    </li>
+                    <li onClick={() => setPage("create")}>Create Bookings</li>
+                    <li onClick={() => setPage("list")}>Booking List</li>
+                    <li onClick={() => setPage("search")}>Search</li>
+                  </>
+                ) : (
+                  <>error</>
+                )}
+              </div>
+            ) : (
+              <>
+                <div id="display_flexwidth">
+                  <div id="collapsed_heading" onClick={OpenNav}>
+                    {navPanel ? (
+                      <p>=</p>
+                    ) : (
+                      <>
+                        <p>=</p>
+                        <div id="navigation_box_expanded_header">
+                          <ul>
+                            <li onClick={() => setPage("calendar")}>
+                              {" "}
+                              Activity Calendar
+                            </li>
+                            <li onClick={() => setPage("create")}>
+                              Create Booking
+                            </li>
+                            <li onClick={() => setPage("list")}>
+                              Booking List
+                            </li>
+                            <li>Search</li>
+                          </ul>
+                        </div>
+                      </>
+                    )}
+                  </div>
+                </div>
+              </>
+            )}
           </div>
           <div id="display-flex-column">
             <div id="username_decor">{Username}</div>

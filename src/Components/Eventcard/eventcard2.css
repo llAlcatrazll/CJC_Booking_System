@@ -1,0 +1,10 @@
+.eventcardbox {
+  width: 98%;
+  height: auto;
+  background-color: rgb(243, 243, 243);
+  border-radius: 8px;
+  display: flex;
+  flex-direction: row;
+  padding-left: 10px;
+  border: solid 2px #00000040;
+}

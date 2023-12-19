@@ -2,6 +2,7 @@ import { useState } from "react";
 import "./createbookings.css";
 
 export default function CreateBookings() {
+  //
   const [NameofEvent, setNameofEvent] = useState();
   const [AdressofEvent, setAdressofEvent] = useState();
   const [PurposeofEvent, setPurposeofEvent] = useState();
@@ -12,6 +13,7 @@ export default function CreateBookings() {
   const [DetailsConfirmation, setDetailsConfirmation] = useState(false);
   const [Facility, setFacility] = useState(false);
   const [Room, setRoom] = useState(false);
+  const [eventStatus, seteventStatus] = useState("Pending");
   /*
 No difference between Student Assisant and Admin Reservation */
   const handlesubmit = async (e) => {
@@ -27,6 +29,7 @@ No difference between Student Assisant and Admin Reservation */
       DateofEvent,
       EndingTimeofEvent,
       StartingTimeofEvent,
+      eventStatus,
     };
     console.log(blog);
     console.log("Its working");
@@ -49,6 +52,7 @@ No difference between Student Assisant and Admin Reservation */
     setStartingTimeofEvent("");
     setFacility("");
     setRoom("");
+    seteventStatus("Pending");
   };
 
   const details_popup = (e) => {

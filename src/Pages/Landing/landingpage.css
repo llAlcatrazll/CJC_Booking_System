@@ -18,6 +18,38 @@
   background-color: #00000070;
   color: white;
 }
+#collapsed_heading > p {
+  box-shadow: 1px 1px 1px #00000070;
+  width: 40px;
+  height: 40px;
+  border-radius: 8px;
+  float: left;
+  text-align: center;
+  vertical-align: middle;
+  background-color: white;
+  position: relative;
+}
+#navigation_box_expanded_header {
+  position: absolute;
+  margin-top: 50px;
+  z-index: 99999;
+  width: auto;
+  height: auto;
+  border-radius: 6px;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  background-color: rgb(255, 255, 255);
+  padding: 10px;
+}
+#display_flexwidth {
+  display: flex;
+  flex-direction: row;
+
+  width: 100%;
+  align-items: center;
+  justify-content: flex-end;
+  padding-right: 10px;
+}
+
 #username_decor {
   margin-right: 20px;
   font-size: larger;
